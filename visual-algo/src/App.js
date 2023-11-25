@@ -1,16 +1,15 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-import NavBar from './components/NavBar';
+import NavBar from './visalgo/components/NavBar';
+import SortingVizualizations from "./visalgo/components/SortingVisualization";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
+    <div className="">
+    
 
-      <div>
-
-      </div>
+      <SortingVizualizations />
     </div>
   );
 }
