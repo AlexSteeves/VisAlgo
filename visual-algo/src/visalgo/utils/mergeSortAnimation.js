@@ -17,7 +17,7 @@ function mergeSortHelper(
     const middleIndex = Math.floor((startIndex + endIndex) / 2);
     mergeSortHelper(pieceArray, startIndex, middleIndex, mainArray, animations);
     mergeSortHelper(pieceArray, middleIndex + 1, endIndex, mainArray, animations);
-    DocumentFragment(mainArray, startIndex, middleIndex, endIndex, pieceArray, animations);
+    doMerge(mainArray, startIndex, middleIndex, endIndex, pieceArray, animations);
 
 }
 
