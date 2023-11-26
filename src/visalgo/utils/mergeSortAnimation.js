@@ -34,45 +34,35 @@ function doMerge(
   let i = startIndex;
   let j = middleIndex + 1;
   while (i <= middleIndex && j <= endIndex) {
-    // These are the values that we're comparing; we push them once
-    // to change their color.
+
     animations.push([i, j]);
-    // These are the values that we're comparing; we push them a second
-    // time to revert their color.
+
     animations.push([i, j]);
     if (pieceArray[i] <= pieceArray[j]) {
-      // We overwrite the value at index k in the original array with the
-      // value at index i in the auxiliary array.
+ 
       animations.push([k, pieceArray[i]]);
       mainArray[k++] = pieceArray[i++];
     } else {
-      // We overwrite the value at index k in the original array with the
-      // value at index j in the auxiliary array.
+  
       animations.push([k, pieceArray[j]]);
       mainArray[k++] = pieceArray[j++];
     }
   }
   while (i <= middleIndex) {
-    // These are the values that we're comparing; we push them once
-    // to change their color.
+ 
     animations.push([i, i]);
-    // These are the values that we're comparing; we push them a second
-    // time to revert their color.
+ 
     animations.push([i, i]);
-    // We overwrite the value at index k in the original array with the
-    // value at index i in the auxiliary array.
+    
     animations.push([k, pieceArray[i]]);
     mainArray[k++] = pieceArray[i++];
   }
   while (j <= endIndex) {
-    // These are the values that we're comparing; we push them once
-    // to change their color.
+
     animations.push([j, j]);
-    // These are the values that we're comparing; we push them a second
-    // time to revert their color.
+
     animations.push([j, j]);
-    // We overwrite the value at index k in the original array with the
-    // value at index j in the auxiliary array.
+  
     animations.push([k, pieceArray[j]]);
     mainArray[k++] = pieceArray[j++];
   }

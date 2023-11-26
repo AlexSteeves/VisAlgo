@@ -1,20 +1,24 @@
 
 import React from "react";
 import { mergeSortAnimation } from "../utils/mergeSortAnimation";
+import { Component } from 'react';
 
 
 const ANIMATION_SPEED_MS = 3;
-const NUMBER_OF_ARRAY_BARS = 150;
+const NUMBER_OF_ARRAY_BARS = 100;
 
 const PRIMARY_COLOR = 'turquoise';
 const SECONDARY_COLOR = 'red';
 
 
-export default class SortingVizualizations extends React.Component {
+class SortingVisualizations extends Component {
     constructor(props) {
         super(props);
         this.state = { array: []};
     }
+
+    
+
 
     componentDidMount() {
         this.resetArray();
@@ -72,6 +76,7 @@ export default class SortingVizualizations extends React.Component {
 
         return (
             <div>
+              
                 {array.map((value, idx) => (
                     <div
                     className="w-1 inline-block mx-0.5 rec-bar" 
@@ -83,10 +88,7 @@ export default class SortingVizualizations extends React.Component {
                     }}></div>
                 ))}
                 
-                <button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => this.resetArray()}>
-                    generate New Array
-                </button>
-                <button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2" onClick={() => this.mergeSort()}>MergeSort</button>
+                
             </div>
 
         );
@@ -97,3 +99,5 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+
+export default SortingVisualizations;
